@@ -1,0 +1,4 @@
+include ':shared'
+include ':automotive'
+include ':mobile'
+rootProject.name = "My Application"
