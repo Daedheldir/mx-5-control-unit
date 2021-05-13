@@ -10,42 +10,42 @@
     "Includepath": "D:\\Programming\\arduino-1.8.12\\portable\\packages\\arduino\\hardware\\avr\\1.8.3\\variants\\mega"
   },
   {
-    "Sourcefile": "d:\\Programming\\source\\repos\\Arduino\\Arduino_OBD2_Reader\\Arduino_Sketch\\build\\sketch\\sketch.ino.cpp",
+    "Sourcefile": "d:\\Programming\\source\\repos\\Arduino\\arduino_car_controller\\Arduino_Sketch\\build\\sketch\\sketch.ino.cpp",
     "Include": "LiquidCrystal_I2C.h",
     "Includepath": "D:\\Programming\\arduino-1.8.12\\portable\\sketchbook\\libraries\\LiquidCrystal_I2C"
   },
   {
-    "Sourcefile": "d:\\Programming\\source\\repos\\Arduino\\Arduino_OBD2_Reader\\Arduino_Sketch\\build\\sketch\\sketch.ino.cpp",
+    "Sourcefile": "d:\\Programming\\source\\repos\\Arduino\\arduino_car_controller\\Arduino_Sketch\\build\\sketch\\sketch.ino.cpp",
     "Include": "Wire.h",
     "Includepath": "D:\\Programming\\arduino-1.8.12\\portable\\packages\\arduino\\hardware\\avr\\1.8.3\\libraries\\Wire\\src"
   },
   {
-    "Sourcefile": "d:\\Programming\\source\\repos\\Arduino\\Arduino_OBD2_Reader\\Arduino_Sketch\\build\\sketch\\sketch.ino.cpp",
+    "Sourcefile": "d:\\Programming\\source\\repos\\Arduino\\arduino_car_controller\\Arduino_Sketch\\build\\sketch\\sketch.ino.cpp",
     "Include": "ELMduino.h",
     "Includepath": "D:\\Programming\\arduino-1.8.12\\portable\\sketchbook\\libraries\\ELMDuino\\src"
   },
   {
-    "Sourcefile": "d:\\Programming\\source\\repos\\Arduino\\Arduino_OBD2_Reader\\Arduino_Sketch\\build\\sketch\\sketch.ino.cpp",
+    "Sourcefile": "d:\\Programming\\source\\repos\\Arduino\\arduino_car_controller\\Arduino_Sketch\\build\\sketch\\sketch.ino.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "d:\\Programming\\source\\repos\\Arduino\\Arduino_OBD2_Reader\\Arduino_Sketch\\build\\sketch\\src\\BluetoothController.cpp",
+    "Sourcefile": "d:\\Programming\\source\\repos\\Arduino\\arduino_car_controller\\Arduino_Sketch\\build\\sketch\\src\\BluetoothController.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "d:\\Programming\\source\\repos\\Arduino\\Arduino_OBD2_Reader\\Arduino_Sketch\\build\\sketch\\src\\ExhaustController.cpp",
+    "Sourcefile": "d:\\Programming\\source\\repos\\Arduino\\arduino_car_controller\\Arduino_Sketch\\build\\sketch\\src\\ExhaustController.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "d:\\Programming\\source\\repos\\Arduino\\Arduino_OBD2_Reader\\Arduino_Sketch\\build\\sketch\\src\\LCDController.cpp",
+    "Sourcefile": "d:\\Programming\\source\\repos\\Arduino\\arduino_car_controller\\Arduino_Sketch\\build\\sketch\\src\\LCDController.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "d:\\Programming\\source\\repos\\Arduino\\Arduino_OBD2_Reader\\Arduino_Sketch\\build\\sketch\\src\\OBDIIController.cpp",
+    "Sourcefile": "d:\\Programming\\source\\repos\\Arduino\\arduino_car_controller\\Arduino_Sketch\\build\\sketch\\src\\OBDIIController.cpp",
     "Include": "",
     "Includepath": null
   },

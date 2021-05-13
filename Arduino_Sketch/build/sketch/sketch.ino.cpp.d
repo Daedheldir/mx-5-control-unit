@@ -1,5 +1,5 @@
-d:\Programming\source\repos\Arduino\Arduino_OBD2_Reader\Arduino_Sketch\build\sketch\sketch.ino.cpp.o: \
- d:\Programming\source\repos\Arduino\Arduino_OBD2_Reader\Arduino_Sketch\build\sketch\sketch.ino.cpp \
+d:\Programming\source\repos\Arduino\arduino_car_controller\Arduino_Sketch\build\sketch\sketch.ino.cpp.o: \
+ d:\Programming\source\repos\Arduino\arduino_car_controller\Arduino_Sketch\build\sketch\sketch.ino.cpp \
  D:\Programming\arduino-1.8.12\portable\packages\arduino\hardware\avr\1.8.3\cores\arduino/Arduino.h \
  D:\Programming\arduino-1.8.12\portable\packages\arduino\hardware\avr\1.8.3\cores\arduino/binary.h \
  D:\Programming\arduino-1.8.12\portable\packages\arduino\hardware\avr\1.8.3\cores\arduino/WCharacter.h \
@@ -15,8 +15,8 @@ d:\Programming\source\repos\Arduino\Arduino_OBD2_Reader\Arduino_Sketch\build\ske
  D:\Programming\arduino-1.8.12\portable\packages\arduino\hardware\avr\1.8.3\cores\arduino/Print.h \
  D:\Programming\arduino-1.8.12\portable\packages\arduino\hardware\avr\1.8.3\libraries\Wire\src/Wire.h \
  D:\Programming\arduino-1.8.12\portable\packages\arduino\hardware\avr\1.8.3\cores\arduino/Stream.h \
- d:\Programming\source\repos\Arduino\Arduino_OBD2_Reader\Arduino_Sketch\build\sketch\include/LCDController.h \
- d:\Programming\source\repos\Arduino\Arduino_OBD2_Reader\Arduino_Sketch\build\sketch\include/OBDIIController.h \
+ d:\Programming\source\repos\Arduino\arduino_car_controller\Arduino_Sketch\build\sketch\include/LCDController.h \
+ d:\Programming\source\repos\Arduino\arduino_car_controller\Arduino_Sketch\build\sketch\include/OBDIIController.h \
  D:\Programming\arduino-1.8.12\portable\sketchbook\libraries\ELMDuino\src/ELMduino.h \
- d:\Programming\source\repos\Arduino\Arduino_OBD2_Reader\Arduino_Sketch\build\sketch\include/BluetoothController.h \
- d:\Programming\source\repos\Arduino\Arduino_OBD2_Reader\Arduino_Sketch\build\sketch\include/ExhaustController.h
+ d:\Programming\source\repos\Arduino\arduino_car_controller\Arduino_Sketch\build\sketch\include/BluetoothController.h \
+ d:\Programming\source\repos\Arduino\arduino_car_controller\Arduino_Sketch\build\sketch\include/ExhaustController.h

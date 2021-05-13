@@ -1,6 +1,6 @@
-d:\Programming\source\repos\Arduino\Arduino_OBD2_Reader\Arduino_Sketch\build\sketch\src\BluetoothController.cpp.o: \
- d:\Programming\source\repos\Arduino\Arduino_OBD2_Reader\Arduino_Sketch\build\sketch\src\BluetoothController.cpp \
- d:\programming\source\repos\arduino\arduino_obd2_reader\arduino_sketch\build\sketch\include\bluetoothcontroller.h \
+d:\Programming\source\repos\Arduino\arduino_car_controller\Arduino_Sketch\build\sketch\src\BluetoothController.cpp.o: \
+ d:\Programming\source\repos\Arduino\arduino_car_controller\Arduino_Sketch\build\sketch\src\BluetoothController.cpp \
+ d:\programming\source\repos\arduino\arduino_car_controller\arduino_sketch\build\sketch\include\bluetoothcontroller.h \
  D:\Programming\arduino-1.8.12\portable\packages\arduino\hardware\avr\1.8.3\cores\arduino/Arduino.h \
  D:\Programming\arduino-1.8.12\portable\packages\arduino\hardware\avr\1.8.3\cores\arduino/binary.h \
  D:\Programming\arduino-1.8.12\portable\packages\arduino\hardware\avr\1.8.3\cores\arduino/WCharacter.h \
@@ -12,7 +12,7 @@ d:\Programming\source\repos\Arduino\Arduino_OBD2_Reader\Arduino_Sketch\build\ske
  D:\Programming\arduino-1.8.12\portable\packages\arduino\hardware\avr\1.8.3\cores\arduino/USBAPI.h \
  D:\Programming\arduino-1.8.12\portable\packages\arduino\hardware\avr\1.8.3\cores\arduino/Arduino.h \
  D:\Programming\arduino-1.8.12\portable\packages\arduino\hardware\avr\1.8.3\variants\mega/pins_arduino.h \
- d:\programming\source\repos\arduino\arduino_obd2_reader\arduino_sketch\build\sketch\include\lcdcontroller.h \
+ d:\programming\source\repos\arduino\arduino_car_controller\arduino_sketch\build\sketch\include\lcdcontroller.h \
  D:\Programming\arduino-1.8.12\portable\sketchbook\libraries\LiquidCrystal_I2C/LiquidCrystal_I2C.h \
  D:\Programming\arduino-1.8.12\portable\packages\arduino\hardware\avr\1.8.3\cores\arduino/Print.h \
  D:\Programming\arduino-1.8.12\portable\packages\arduino\hardware\avr\1.8.3\libraries\Wire\src/Wire.h \
