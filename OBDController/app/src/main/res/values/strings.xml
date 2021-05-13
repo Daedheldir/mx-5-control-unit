@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">OBD Controller</string>
+    <string name="exhaust_on">Exhaust Valve Open</string>
+    <string name="exhaust_off">Exhaust Valve Closed</string>
+</resources>

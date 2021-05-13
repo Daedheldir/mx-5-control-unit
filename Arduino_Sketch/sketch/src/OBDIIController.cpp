@@ -2,7 +2,7 @@
 #include "../include/LCDController.h"
 namespace dh
 {
-    OBDIIController::OBDIIController() {}
+    OBDIIController::OBDIIController() : btController(ConnectionType::BT_ELM327, "000000000000") {}
     void OBDIIController::Init()
     {
         pinMode(13, OUTPUT);
@@ -17,7 +17,7 @@ namespace dh
         LCDController::Print(0, 0, "ELM327");
         LCDController::Print(0, 1, "CONNECTING...");
 
-        if (!elm327.begin(HM10_ELM327))
+        if (!elm327.begin(HC05_ELM327))
         {
             Serial.println("Couldn't connect to OBD scanner");
             LCDController::Print(0, 1, "ERROR!!! RESTART");

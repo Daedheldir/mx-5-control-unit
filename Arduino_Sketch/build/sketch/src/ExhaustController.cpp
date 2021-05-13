@@ -21,7 +21,7 @@ namespace dh
         delay(100);
 
         //CALIBRATION, PROBABLY CONFIGURATION MODE
-
+        /*
         Serial.println("Enabled pwm");
         SetValvesPWMValue(1);
         delay(500);
@@ -41,6 +41,7 @@ namespace dh
         delay(1000);
         Serial.println("Enabled PWM, valve should open");
         SetValvesPWMValue(1);
+        */
     }
     void ExhaustController::SetControlPin(bool status)
     {
@@ -48,9 +49,11 @@ namespace dh
         {
         case false:
             digitalWrite(CONTROL_PIN, HIGH);
+            digitalWrite(LED_BUILTIN, HIGH);
             break;
         case true:
             digitalWrite(CONTROL_PIN, LOW);
+            digitalWrite(LED_BUILTIN, LOW);
             break;
         default:
             break;

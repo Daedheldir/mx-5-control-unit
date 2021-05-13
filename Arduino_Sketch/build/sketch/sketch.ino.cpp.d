@@ -11,12 +11,6 @@ d:\Programming\source\repos\Arduino\arduino_car_controller\Arduino_Sketch\build\
  D:\Programming\arduino-1.8.12\portable\packages\arduino\hardware\avr\1.8.3\cores\arduino/USBAPI.h \
  D:\Programming\arduino-1.8.12\portable\packages\arduino\hardware\avr\1.8.3\cores\arduino/Arduino.h \
  D:\Programming\arduino-1.8.12\portable\packages\arduino\hardware\avr\1.8.3\variants\mega/pins_arduino.h \
- D:\Programming\arduino-1.8.12\portable\sketchbook\libraries\LiquidCrystal_I2C/LiquidCrystal_I2C.h \
- D:\Programming\arduino-1.8.12\portable\packages\arduino\hardware\avr\1.8.3\cores\arduino/Print.h \
- D:\Programming\arduino-1.8.12\portable\packages\arduino\hardware\avr\1.8.3\libraries\Wire\src/Wire.h \
- D:\Programming\arduino-1.8.12\portable\packages\arduino\hardware\avr\1.8.3\cores\arduino/Stream.h \
- d:\Programming\source\repos\Arduino\arduino_car_controller\Arduino_Sketch\build\sketch\include/LCDController.h \
- d:\Programming\source\repos\Arduino\arduino_car_controller\Arduino_Sketch\build\sketch\include/OBDIIController.h \
- D:\Programming\arduino-1.8.12\portable\sketchbook\libraries\ELMDuino\src/ELMduino.h \
- d:\Programming\source\repos\Arduino\arduino_car_controller\Arduino_Sketch\build\sketch\include/BluetoothController.h \
- d:\Programming\source\repos\Arduino\arduino_car_controller\Arduino_Sketch\build\sketch\include/ExhaustController.h
+ d:\Programming\source\repos\Arduino\arduino_car_controller\Arduino_Sketch\build\sketch\include/ExhaustController.h \
+ d:\Programming\source\repos\Arduino\arduino_car_controller\Arduino_Sketch\build\sketch\include/AndroidCommController.h \
+ d:\Programming\source\repos\Arduino\arduino_car_controller\Arduino_Sketch\build\sketch\include/BluetoothController.h
