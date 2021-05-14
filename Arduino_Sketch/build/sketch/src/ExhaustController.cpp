@@ -11,17 +11,20 @@ namespace dh
     ExhaustController::ExhaustController() {}
     void ExhaustController::Init()
     {
-        pinMode(LEFT_VALVE_PIN, OUTPUT);
-        pinMode(RIGHT_VALVE_PIN, OUTPUT);
-        pinMode(CONTROL_PIN, OUTPUT);
+        pinMode(PWM_VALVE_PIN, OUTPUT);
+
+        pinMode(LEFT_RELAY_CONTROL_PIN, OUTPUT);
+        pinMode(RIGHT_RELAY_CONTROL_PIN, OUTPUT);
+
         SetControlPin(false);
+
         SetValvesPWMValue(0);
         Serial.println("Initialized Exhaust pins");
 
         delay(100);
 
         //CALIBRATION, PROBABLY CONFIGURATION MODE
-        /*
+
         Serial.println("Enabled pwm");
         SetValvesPWMValue(1);
         delay(500);
@@ -41,18 +44,37 @@ namespace dh
         delay(1000);
         Serial.println("Enabled PWM, valve should open");
         SetValvesPWMValue(1);
-        */
+    }
+    void ExhaustController::SetValves(bool open)
+    {
+        switch (open)
+        {
+        case false:
+            digitalWrite(LEFT_RELAY_CONTROL_PIN, HIGH);
+            digitalWrite(RIGHT_RELAY_CONTROL_PIN, LOW);
+            digitalWrite(LED_BUILTIN, HIGH);
+            break;
+        case true:
+            digitalWrite(LEFT_RELAY_CONTROL_PIN, LOW);
+            digitalWrite(RIGHT_RELAY_CONTROL_PIN, HIGH);
+            digitalWrite(LED_BUILTIN, LOW);
+            break;
+        default:
+            break;
+        }
     }
     void ExhaustController::SetControlPin(bool status)
     {
         switch (status)
         {
         case false:
-            digitalWrite(CONTROL_PIN, HIGH);
+            digitalWrite(LEFT_RELAY_CONTROL_PIN, HIGH);
+            digitalWrite(RIGHT_RELAY_CONTROL_PIN, HIGH);
             digitalWrite(LED_BUILTIN, HIGH);
             break;
         case true:
-            digitalWrite(CONTROL_PIN, LOW);
+            digitalWrite(LEFT_RELAY_CONTROL_PIN, LOW);
+            digitalWrite(RIGHT_RELAY_CONTROL_PIN, LOW);
             digitalWrite(LED_BUILTIN, LOW);
             break;
         default:
@@ -62,7 +84,6 @@ namespace dh
     void ExhaustController::SetValvesPWMValue(float val)
     {
         int pinVal = val * 255;
-        analogWrite(LEFT_VALVE_PIN, pinVal);
-        analogWrite(RIGHT_VALVE_PIN, analogWrite);
+        analogWrite(PWM_VALVE_PIN, pinVal);
     }
 }

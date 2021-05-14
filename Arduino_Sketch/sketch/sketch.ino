@@ -20,9 +20,9 @@ void loop()
 {
 	androidComms.Update();
 	if (androidComms.GetFlag(dh::AndroidCommController::FLAG_EXHAUST))
-		exhaustController.SetControlPin(true);
+		exhaustController.SetValves(true);
 	else
-		exhaustController.SetControlPin(false);
+		exhaustController.SetValves(false);
 }
 
 void Init()
