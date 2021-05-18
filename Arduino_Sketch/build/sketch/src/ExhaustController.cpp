@@ -11,79 +11,58 @@ namespace dh
     ExhaustController::ExhaustController() {}
     void ExhaustController::Init()
     {
-        pinMode(PWM_VALVE_PIN, OUTPUT);
+        pinMode(PWR_VALVE_PIN, OUTPUT);
 
-        pinMode(LEFT_RELAY_CONTROL_PIN, OUTPUT);
-        pinMode(RIGHT_RELAY_CONTROL_PIN, OUTPUT);
+        pinMode(RELAY_CONTROL_PIN, OUTPUT);
 
-        SetControlPin(false);
+        SetValvesOpen(false);
 
-        SetValvesPWMValue(0);
+        SetValvesPWR(false);
         Serial.println("Initialized Exhaust pins");
 
         delay(100);
 
         //CALIBRATION, PROBABLY CONFIGURATION MODE
 
-        Serial.println("Enabled pwm");
-        SetValvesPWMValue(1);
+        Serial.println("Enabled pwr");
+        SetValvesPWR(true);
         delay(500);
         Serial.println("Enabled control pin, calibration should start");
-        SetControlPin(true);
+        SetValvesOpen(true);
         delay(500);
         Serial.println("Disabled control pin");
-        SetControlPin(false);
-        delay(10000);
-        Serial.println("Disabled pwm, calibration should be completed");
-        SetValvesPWMValue(0);
-        delay(1000);
+        SetValvesOpen(false);
+        delay(8000);
+        Serial.println("Disabled pwr, calibration should be completed");
+        SetValvesPWR(false);
+        delay(200);
 
         //Normal Operation
         Serial.println("Enabled control pin");
-        SetControlPin(true);
-        delay(1000);
-        Serial.println("Enabled PWM, valve should open");
-        SetValvesPWMValue(1);
+        SetValvesOpen(true);
+        delay(500);
+        Serial.println("Enabled PWR, valve should open");
+        SetValvesPWR(true);
     }
-    void ExhaustController::SetValves(bool open)
+    void ExhaustController::SetValvesOpen(bool open)
     {
-        switch (open)
+        if (!open)
         {
-        case false:
-            digitalWrite(LEFT_RELAY_CONTROL_PIN, HIGH);
-            digitalWrite(RIGHT_RELAY_CONTROL_PIN, LOW);
+            digitalWrite(RELAY_CONTROL_PIN, LOW);
             digitalWrite(LED_BUILTIN, HIGH);
-            break;
-        case true:
-            digitalWrite(LEFT_RELAY_CONTROL_PIN, LOW);
-            digitalWrite(RIGHT_RELAY_CONTROL_PIN, HIGH);
+        }
+        else
+        {
+            digitalWrite(RELAY_CONTROL_PIN, HIGH);
             digitalWrite(LED_BUILTIN, LOW);
-            break;
-        default:
-            break;
         }
     }
-    void ExhaustController::SetControlPin(bool status)
+
+    void ExhaustController::SetValvesPWR(bool power)
     {
-        switch (status)
-        {
-        case false:
-            digitalWrite(LEFT_RELAY_CONTROL_PIN, HIGH);
-            digitalWrite(RIGHT_RELAY_CONTROL_PIN, HIGH);
-            digitalWrite(LED_BUILTIN, HIGH);
-            break;
-        case true:
-            digitalWrite(LEFT_RELAY_CONTROL_PIN, LOW);
-            digitalWrite(RIGHT_RELAY_CONTROL_PIN, LOW);
-            digitalWrite(LED_BUILTIN, LOW);
-            break;
-        default:
-            break;
-        }
-    }
-    void ExhaustController::SetValvesPWMValue(float val)
-    {
-        int pinVal = val * 255;
-        analogWrite(PWM_VALVE_PIN, pinVal);
+        if (power)
+            digitalWrite(PWR_VALVE_PIN, HIGH);
+        else
+            digitalWrite(PWR_VALVE_PIN, LOW);
     }
 }

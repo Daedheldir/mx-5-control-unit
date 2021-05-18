@@ -3,7 +3,7 @@
 #include <string.h>
 
 #define HC05_ELM327 Serial3
-#define HM10_ANDROID Serial2
+#define HC05_ANDROID Serial2
 
 namespace dh
 {

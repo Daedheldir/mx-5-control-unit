@@ -89,7 +89,7 @@ namespace dh
         }
         case ConnectionType::BT_ANDROID:
         {
-            activeSerial = &HM10_ANDROID;
+            activeSerial = &HC05_ANDROID;
             activeSerial->begin(38400);
 
             Serial.println("Configuring BT...");

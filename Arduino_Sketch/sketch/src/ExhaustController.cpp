@@ -11,14 +11,13 @@ namespace dh
     ExhaustController::ExhaustController() {}
     void ExhaustController::Init()
     {
-        pinMode(PWM_VALVE_PIN, OUTPUT);
+        pinMode(PWR_VALVE_PIN, OUTPUT);
 
-        pinMode(LEFT_RELAY_CONTROL_PIN, OUTPUT);
         pinMode(RELAY_CONTROL_PIN, OUTPUT);
 
         SetValvesOpen(false);
 
-        SetValvesPWRValue(false);
+        SetValvesPWR(false);
         Serial.println("Initialized Exhaust pins");
 
         delay(100);
@@ -26,7 +25,7 @@ namespace dh
         //CALIBRATION, PROBABLY CONFIGURATION MODE
 
         Serial.println("Enabled pwr");
-        SetValvesPWRValue(true);
+        SetValvesPWR(true);
         delay(500);
         Serial.println("Enabled control pin, calibration should start");
         SetValvesOpen(true);
@@ -35,7 +34,7 @@ namespace dh
         SetValvesOpen(false);
         delay(8000);
         Serial.println("Disabled pwr, calibration should be completed");
-        SetValvesPWRValue(false);
+        SetValvesPWR(false);
         delay(200);
 
         //Normal Operation
@@ -43,7 +42,7 @@ namespace dh
         SetValvesOpen(true);
         delay(500);
         Serial.println("Enabled PWR, valve should open");
-        SetValvesPWRValue(true);
+        SetValvesPWR(true);
     }
     void ExhaustController::SetValvesOpen(bool open)
     {

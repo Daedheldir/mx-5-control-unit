@@ -19,9 +19,8 @@ namespace dh
         ExhaustController();
         void Init();
 
-        //float val = <0,1>
-        void SetValvesPWMValue(float val);
-        void SetValves(bool open);
+        void SetValvesPWR(bool power);
+        void SetValvesOpen(bool open);
         void SetControlPin(bool status);
     };
 }

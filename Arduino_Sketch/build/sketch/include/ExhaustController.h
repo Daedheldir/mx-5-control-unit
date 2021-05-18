@@ -2,9 +2,8 @@
 #include <Arduino.h>
 #include <string.h>
 
-#define LEFT_RELAY_CONTROL_PIN 22
-#define RIGHT_RELAY_CONTROL_PIN 23
-#define PWM_VALVE_PIN 2
+#define RELAY_CONTROL_PIN 23
+#define PWR_VALVE_PIN 25
 
 //on init pwm = 1 then connect brown to calibrate
 //disconnect brown
@@ -20,9 +19,8 @@ namespace dh
         ExhaustController();
         void Init();
 
-        //float val = <0,1>
-        void SetValvesPWMValue(float val);
-        void SetValves(bool open);
+        void SetValvesPWR(bool power);
+        void SetValvesOpen(bool open);
         void SetControlPin(bool status);
     };
 }
