@@ -10,9 +10,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.util.DebugUtils;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -31,38 +29,47 @@ public class MainActivity extends AppCompatActivity {
     ConnectedThread btt = null;           //Our custom thread
     public Handler mHandler;              //this receives messages from thread
 
-    boolean exhaustFlag = false;
-    Button exhaustSwitch;
+    boolean exhaustValveFlag = true;
+    boolean exhaustPwrFlag = true;
+
+    Button exhaustValveSwitch;
+    Button exhaustPwrSwitch;
+    Button exhaustCalibrationSwitch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        exhaustSwitch = (Button) findViewById(R.id.exhaust_valve_button);
+        exhaustValveSwitch = (Button) findViewById(R.id.exhaust_valve_button);
+        exhaustPwrSwitch = (Button) findViewById(R.id.exhaust_power_button);
+        exhaustCalibrationSwitch = (Button) findViewById(R.id.exhaust_calibration_button);
 
-        exhaustSwitch.setOnClickListener(v -> {
+
+        exhaustValveSwitch.setOnClickListener(v -> {
             Log.i("[BLUETOOTH]", "Attempting to send data");
             if (mmSocket.isConnected() && btt != null) { //if we have connection to the bluetoothmodule
-                if(exhaustFlag){
-                    String sendtxt = "EXH_000";
+                if(exhaustValveFlag){
+                    String sendtxt = "EXH_V00";
                     btt.write(sendtxt.getBytes());
-                    exhaustFlag = false;
-                    exhaustSwitch.setText(R.string.exhaust_off);
+                    exhaustValveFlag = false;
+                    exhaustValveSwitch.setText(R.string.exhaust_valve_off);
                 }else{
-                    String sendtxt = "EXH_001";
+                    String sendtxt = "EXH_V01";
                     btt.write(sendtxt.getBytes());
-                    exhaustFlag = true;
-                    exhaustSwitch.setText(R.string.exhaust_on);
+                    exhaustValveFlag = true;
+                    exhaustValveSwitch.setText(R.string.exhaust_valve_on);
                 }
 
                 //disable the button and wait for 4 seconds to enable it again
-                exhaustSwitch.setEnabled(false);
+                exhaustValveSwitch.setEnabled(false);
+                exhaustPwrSwitch.setEnabled(false);
+                exhaustCalibrationSwitch.setEnabled(false);
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
                         try{
-                            Thread.sleep(4000);
+                            Thread.sleep(1500);
                         }catch(InterruptedException e){
                             return;
                         }
@@ -70,7 +77,9 @@ public class MainActivity extends AppCompatActivity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                exhaustSwitch.setEnabled(true);
+                                exhaustValveSwitch.setEnabled(true);
+                                exhaustPwrSwitch.setEnabled(true);
+                                exhaustCalibrationSwitch.setEnabled(true);
                             }
                         });
 
@@ -79,7 +88,100 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 String msg = "Something went wrong!";
                 if(!mmSocket.isConnected()) {
-                    msg="Socket isn't connected!";
+                    msg="Socket isn't connected! Trying to connect...";
+                    attemptBTConnection();
+                }else if (btt == null){
+                    msg="Connected Thread is null!";
+                }
+                Toast.makeText(MainActivity.this, msg, Toast.LENGTH_LONG).show();
+            }
+        });
+        exhaustPwrSwitch.setOnClickListener(v -> {
+            Log.i("[BLUETOOTH]", "Attempting to send data");
+            if (mmSocket.isConnected() && btt != null) { //if we have connection to the bluetoothmodule
+                if(exhaustPwrFlag){
+                    String sendtxt = "EXH_P00";
+                    btt.write(sendtxt.getBytes());
+                    exhaustPwrFlag = false;
+                    exhaustPwrSwitch.setText(R.string.exhaust_pwr_off);
+                }else{
+                    String sendtxt = "EXH_P01";
+                    btt.write(sendtxt.getBytes());
+                    exhaustPwrFlag = true;
+                    exhaustPwrSwitch.setText(R.string.exhaust_pwr_on);
+                }
+
+                //disable the button and wait for 4 seconds to enable it again
+                exhaustValveSwitch.setEnabled(false);
+                exhaustPwrSwitch.setEnabled(false);
+                exhaustCalibrationSwitch.setEnabled(false);
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try{
+                            Thread.sleep(1500);
+                        }catch(InterruptedException e){
+                            return;
+                        }
+
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                exhaustValveSwitch.setEnabled(true);
+                                exhaustPwrSwitch.setEnabled(true);
+                                exhaustCalibrationSwitch.setEnabled(true);
+                            }
+                        });
+
+                    }
+                }).start();
+            } else {
+                String msg = "Something went wrong!";
+                if(!mmSocket.isConnected()) {
+                    msg="Socket isn't connected! Trying to connect...";
+                    attemptBTConnection();
+                }else if (btt == null){
+                    msg="Connected Thread is null!";
+                }
+                Toast.makeText(MainActivity.this, msg, Toast.LENGTH_LONG).show();
+            }
+        });
+        exhaustCalibrationSwitch.setOnClickListener(v -> {
+            Log.i("[BLUETOOTH]", "Attempting to send data");
+            if (mmSocket.isConnected() && btt != null) { //if we have connection to the bluetoothmodule
+                String sendtxt = "EXH_C01";
+                btt.write(sendtxt.getBytes());
+                exhaustCalibrationSwitch.setText(R.string.exhaust_calibration);
+
+                //disable the button and wait for 4 seconds to enable it again
+                exhaustValveSwitch.setEnabled(false);
+                exhaustPwrSwitch.setEnabled(false);
+                exhaustCalibrationSwitch.setEnabled(false);
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try{
+                            Thread.sleep(9000);
+                        }catch(InterruptedException e){
+                            return;
+                        }
+
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                exhaustValveSwitch.setEnabled(true);
+                                exhaustPwrSwitch.setEnabled(true);
+                                exhaustCalibrationSwitch.setEnabled(true);
+                            }
+                        });
+
+                    }
+                }).start();
+            } else {
+                String msg = "Something went wrong!";
+                if(!mmSocket.isConnected()) {
+                    msg="Socket isn't connected! Trying to connect...";
+                    attemptBTConnection();
                 }else if (btt == null){
                     msg="Connected Thread is null!";
                 }
@@ -87,7 +189,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        bta = BluetoothAdapter.getDefaultAdapter();
+        attemptBTConnection();
+    }
+    private void attemptBTConnection(){
+        if(bta == null)
+            bta = BluetoothAdapter.getDefaultAdapter();
         //if bluetooth is not enabled then create Intent for user to turn it on
         if(!bta.isEnabled()){
             Intent enableBTIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
@@ -95,8 +201,8 @@ public class MainActivity extends AppCompatActivity {
         }else{
             initiateBluetoothProcess();
         }
-    }
 
+    }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -131,7 +237,7 @@ public class MainActivity extends AppCompatActivity {
                     //super.handleMessage(msg);
                     if (msg.what == ConnectedThread.RESPONSE_MESSAGE) {
                         String txt = (String) msg.obj;
-                        exhaustSwitch.setText("\n" + txt);
+                        exhaustValveSwitch.setText("\n" + txt);
                     }
                 }
             };

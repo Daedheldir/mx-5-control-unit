@@ -8,13 +8,19 @@
 
 namespace dh
 {
+    static bool ExhaustController::calibratedValves = false;
     ExhaustController::ExhaustController() {}
     void ExhaustController::Init()
     {
-        pinMode(PWR_VALVE_PIN, OUTPUT);
+        calibratedValves = false;
 
+        pinMode(PWR_VALVE_PIN, OUTPUT);
         pinMode(RELAY_CONTROL_PIN, OUTPUT);
 
+        InitValves();
+    }
+    void ExhaustController::CalibrateValves()
+    {
         SetValvesOpen(false);
 
         SetValvesPWR(false);
@@ -32,11 +38,17 @@ namespace dh
         delay(500);
         Serial.println("Disabled control pin");
         SetValvesOpen(false);
-        delay(8000);
+        delay(6000);
         Serial.println("Disabled pwr, calibration should be completed");
         SetValvesPWR(false);
         delay(200);
 
+        InitValves();
+
+        calibratedValves = true;
+    }
+    void ExhaustController::InitValves()
+    {
         //Normal Operation
         Serial.println("Enabled control pin");
         SetValvesOpen(true);
@@ -47,15 +59,9 @@ namespace dh
     void ExhaustController::SetValvesOpen(bool open)
     {
         if (!open)
-        {
             digitalWrite(RELAY_CONTROL_PIN, LOW);
-            digitalWrite(LED_BUILTIN, HIGH);
-        }
         else
-        {
             digitalWrite(RELAY_CONTROL_PIN, HIGH);
-            digitalWrite(LED_BUILTIN, LOW);
-        }
     }
 
     void ExhaustController::SetValvesPWR(bool power)

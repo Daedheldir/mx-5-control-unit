@@ -19,8 +19,14 @@ namespace dh
         ExhaustController();
         void Init();
 
+        void CalibrateValves();
         void SetValvesPWR(bool power);
         void SetValvesOpen(bool open);
-        void SetControlPin(bool status);
+
+    private:
+        void InitValves();
+
+    private:
+        static bool calibratedValves;
     };
 }

@@ -6,20 +6,96 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/exhaust_valve_button"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginLeft="55dp"
-        android:layout_marginTop="215dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginRight="56dp"
-        android:layout_marginBottom="216dp"
-        android:text="@string/exhaust_off"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="414dp"
+        android:layout_height="730dp"
+        android:layout_marginStart="-5dp"
+        android:layout_marginLeft="-5dp"
+        android:layout_marginTop="-5dp"
+        android:layout_marginEnd="-5dp"
+        android:layout_marginRight="-5dp"
+        android:layout_marginBottom="-5dp"
+        android:background="#18272E"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="TODO" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/exhaust_calibration_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="55dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="55dp"
+            android:layout_marginRight="55dp"
+            android:layout_weight="1"
+            android:background="@android:drawable/progress_horizontal"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/exhaust_calibration"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/mtrl_btn_bg_color_selector"
+            app:elevation="2dp"
+            tools:text="@string/exhaust_calibration" />
+
+        <Button
+            android:id="@+id/exhaust_power_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="55dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="55dp"
+            android:layout_marginRight="55dp"
+            android:layout_weight="1"
+            android:background="@android:drawable/progress_horizontal"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/exhaust_pwr_on"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/mtrl_btn_bg_color_selector"
+            app:elevation="2dp"
+            tools:text="@string/exhaust_pwr_on" />
+
+        <Button
+            android:id="@+id/exhaust_valve_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="55dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="55dp"
+            android:layout_marginRight="55dp"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="1"
+            android:background="@android:drawable/progress_horizontal"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/exhaust_valve_on"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/mtrl_btn_bg_color_selector"
+            app:elevation="2dp"
+            tools:text="@string/exhaust_valve_on" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
