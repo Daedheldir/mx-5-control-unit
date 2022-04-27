@@ -7,3 +7,4 @@ Exhaust valves are controlled with a relay and an IRF520 MOSFET driver module.
 # TODO features (reminder for me)
 - Intelligent control schemes based on OBD2 data (e.g. opening and closing windows when soft top is down based on speed to limit the amount of wind felt inside).
 - Change of window switches to touch screen for control of windows with additional functionality (e.g. lowering windows a bit when raising the soft top and then automatically closing them back up). 
+- Neat and compact PCB for all the components.
